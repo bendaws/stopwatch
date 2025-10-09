@@ -1,4 +1,27 @@
-MIT License
+                                Stopwatch
+===============================================================================
+Basic stopwatch library for Lua.
+
+You can create a new stopwatch object with stopwatch.create(). You can either
+call the stopwatch as a function or do stopwatch_obj:start() and
+stopwatch_obj:stop() to end the stopwatch.
+===============================================================================
+Usage Example:
+
+        local stlib = require("stopwatch")
+        local stopwatch = stlib.create()
+
+        stopwatch:start() -- or stopwatch() to toggle starting / stopping
+
+        local endAt = os.time() + 3
+        repeat until os.time() > endAt
+
+        stopwatch:stop() -- returns integer value of the stopwatch time
+
+        print(tostring(stopwatch)) -- * secs
+===============================================================================
+License:
+                               MIT License
 
 Copyright (c) 2025 Ben Daws
 
